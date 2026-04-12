@@ -35,4 +35,9 @@ public class Carta {
     public int getValorNumerico() {
         return cartas.get(valor);
     }
+    @Override
+    public String toString() {
+        // Esto es lo que se verá en la consola
+        return valor + " de " + palo;
+    }
 }
