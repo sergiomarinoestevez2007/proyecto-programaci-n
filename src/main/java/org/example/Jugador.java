@@ -3,13 +3,12 @@ package org.example;
 public class Jugador extends Participante{
     private String nombre;
     private int creditos;
-    private Mano mano;
     private Apuesta apuesta;
 
-    public Jugador(String nombre, int creditos) {
+    public Jugador(String nombre, int creditos, Apuesta apuesta) {
+        super();
         this.nombre = nombre;
         this.creditos = creditos;
-        this.mano = new Mano();
     }
 
     public void pedirCarta(Baraja baraja) {
@@ -37,14 +36,6 @@ public class Jugador extends Participante{
 
     public void setCreditos(int creditos) {
         this.creditos = creditos;
-    }
-
-    public Mano getMano() {
-        return mano;
-    }
-
-    public void reiniciarMano() {
-        this.mano = new Mano();
     }
 
     public void realizarApuesta(int cantidad) {
