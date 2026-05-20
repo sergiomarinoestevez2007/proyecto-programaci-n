@@ -1,6 +1,6 @@
 package org.example;
 
-public class Jugador {
+public class Jugador extends Participante{
     private String nombre;
     private int creditos;
     private Mano mano;
