@@ -7,6 +7,19 @@ public abstract class Participante {
     public Participante() {
         this.mano = new Mano();
     }
+
+    public Mano getMano() {
+        return mano;
+    }
+
+    public void reiniciarMano() {
+        this.mano = new Mano();
+    }
+
+    public void pedirCarta(Baraja baraja) {
+        mano.agregarCarta(baraja.repartirCarta());
+    }
 }
+
 
 
