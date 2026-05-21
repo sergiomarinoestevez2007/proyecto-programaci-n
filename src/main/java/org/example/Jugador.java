@@ -5,7 +5,7 @@ public class Jugador extends Participante implements AccionesJuego{
     private int creditos;
     private Apuesta apuesta;
 
-    public Jugador(String nombre, int creditos, Apuesta apuesta) {
+    public Jugador(String nombre, int creditos) {
         super();
         this.nombre = nombre;
         this.creditos = creditos;
