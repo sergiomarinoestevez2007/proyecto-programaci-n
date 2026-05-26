@@ -11,10 +11,6 @@ public class Jugador extends Participante implements AccionesJuego{
         this.creditos = creditos;
     }
 
-    public void pedirCarta(Baraja baraja) {
-        mano.agregarCarta(baraja.repartirCarta());
-    }
-
     public void plantarse() {
         
     }
