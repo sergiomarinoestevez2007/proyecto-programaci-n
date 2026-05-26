@@ -1,19 +1,28 @@
 package org.example;
+import java.util.ArrayList;
+import java.util.List;
+
+
 public class Juego {
     private Jugador jugador;
     private Crupier crupier;
     private Baraja baraja;
+    private List<Participante> participantes;
 
     public Juego(Jugador jugador) {
         this.jugador = jugador;
         this.crupier = new Crupier();
+        participantes = new ArrayList<>();
+        participantes.add(jugador);
+        participantes.add(crupier);
     }
 
     public void iniciarRonda() {
         baraja = new Baraja();
         baraja.barajar();
-        jugador.reiniciarMano();
-        crupier.reiniciarMano();
+        for (Participante p : participantes) {
+            p.reiniciarMano();
+        }
     }
 
     public void repartirInicial() {
