@@ -33,7 +33,7 @@ public class Juego {
         crupier.getMano().agregarCarta(baraja.repartirCarta());
     }
 
-    public String determinarGanador() {
+    public String determinarGanador(){
         int valorJugador = jugador.getMano().calcularValor();
         int valorCrupier = crupier.getMano().calcularValor();
         int apuesta = jugador.getApuesta().getCantidad();

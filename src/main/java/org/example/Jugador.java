@@ -34,9 +34,12 @@ public class Jugador extends Participante implements AccionesJuego{
         this.creditos = creditos;
     }
 
-    public void realizarApuesta(int cantidad) {
-        this.apuesta = new Apuesta(cantidad);
-        this.creditos -= cantidad; // Se descuentan los créditos de inmediato
+    public void realizarApuesta(int cantidadApuesta) throws Exception {
+        if (cantidadApuesta <= 0 || cantidadApuesta > creditos) {
+            throw new ApuestaException("Apuesta no válida.");
+
+        }
+        this.creditos -= cantidadApuesta;
     }
 
     public Apuesta getApuesta() {

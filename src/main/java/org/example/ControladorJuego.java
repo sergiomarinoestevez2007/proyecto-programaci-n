@@ -8,7 +8,7 @@ public class ControladorJuego {
         this.vista = new VistaJuego();
     }
 
-    public void jugar() {
+    public void jugar() throws Exception {
         Jugador jugador = new Jugador("Jugador 1", 1000);
         juego = new Juego(jugador);
 
@@ -16,11 +16,6 @@ public class ControladorJuego {
 
         while (jugador.getCreditos() > 0) {
             int cantidadApuesta = vista.pedirApuesta(jugador.getCreditos());
-
-            if (cantidadApuesta <= 0 || cantidadApuesta > jugador.getCreditos()) {
-                vista.mostrarMensaje("Apuesta no válida.");
-                continue;
-            }
 
             jugador.realizarApuesta(cantidadApuesta);
             juego.iniciarRonda();
